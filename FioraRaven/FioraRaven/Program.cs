@@ -74,7 +74,7 @@ namespace FioraRaven
             Game.PrintChat("Fiora The Raven By DZ191 Loaded ");
             menu.AddToMainMenu();
             Obj_AI_Base.OnProcessSpellCast += Game_ProcessSpell;
-            Game.OnGameUpdate += Game_OnGameUpdate;
+            Game.OnUpdate += Game_OnUpdate;
             Orbwalking.AfterAttack += Orbwalking_AfterAttack;
             Orbwalking.OnAttack += Orbwalking_OnAttack;
             Drawing.OnDraw += Drawing_OnDraw;
@@ -192,7 +192,7 @@ namespace FioraRaven
                 firstQ = false;
             }
         }
-        public static void Game_OnGameUpdate(EventArgs args)
+        public static void Game_OnUpdate(EventArgs args)
         {
             if (!Q.IsReady())firstQ = false;
             if (isCombo()) { 
